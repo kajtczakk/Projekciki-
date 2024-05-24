@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>    
+        <script src="script.js"></script>
+        <title>Guessing game</title>
+    </head>
+    <body id="starting-game">
+        <nav>
+            <div class="quiz-informator"><h1>Categories:</h1></div>
+            <div class="spacing-beetwen"></div>
+            <div class="quiz-type"><h2>Geography</h2></div>
+            <div class="spacing-beetwen"></div>
+            <div class="quiz-type"><h2>Anime/Manga</h2></div>
+            <div class="spacing-beetwen"></div>
+            <div class="quiz-type"><h2>History</h2></div>
+            <div class="spacing-beetwen"></div>
+            <div class="quiz-type"><h2>Video Games</h2></div>
+        </nav>
+        <main id="choosing-questions">
+            <h1>Geography quiz</h1>
+            <h3>Number of questions:</h3>
+            <div class="range-wrap">
+                <input name="number-of-questions" type="range" value="10" min="1" step="1" max="50">
+                <output for="number-of-questions">10</output>
+            </div>
+            <h3>Difficulty of the quiz:</h3>
+            <div class="quiz-difficulty">
+                <label for="quiz-difficulty-easy">
+                    <input type="radio" name="quiz-difficulty" id="quiz-difficulty-easy" value="easy">Easy
+                </label>
+                <label for="quiz-difficulty-medium">
+                    <input type="radio" name="quiz-difficulty" id="quiz-difficulty-medium" checked value="medium">Medium
+                </label>
+                <label for="quiz-difficulty-hard">
+                    <input type="radio" name="quiz-difficulty" id="quiz-difficulty-hard" value="hard">Hard
+                </label>
+            </div>
+            <button class="start-button">Start Quiz</button>
+        </main>
+        <main id="playing">
+            <h2 class="question"></h2>
+            <div class="answers">
+                <button class="answer-1" value="1"></button>
+                <button class="answer-2" value="2"></button>
+                <button class="answer-3" value="3"></button>
+                <button class="answer-4" value="4"></button>
+            </div>
+            <div class="working-around">
+                <button class="go-previous">Previous question</button>
+                <button class="go-next">Next question</button>
+            </div> 
+            <div class="question-list"></div>
+        </main>
+        <section class="end-info">
+            <div class="end-info-container">
+                <h1>Are you sure you want to check your results?</h1>
+                <button class="end-game">End game</button>
+                <button class="continue-game">Continue playing</button>
+            </div>
+        </section>
+        <main id="results">
+            <div class="results"></div>
+            <div class="grade">
+                <h1>You got:</h1>
+                <h1 class="your-percentage"></h1>
+            </div>
+        </main>
+    </body>
+</html>
