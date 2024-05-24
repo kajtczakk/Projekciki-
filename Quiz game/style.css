@@ -24,7 +24,7 @@
     font-family: mainFont;
     margin: 0px;
     padding: 0px;
-    color: whitesmoke;
+    color: #F1E5D1;
 }
 #choosing-questions
 {
@@ -35,20 +35,20 @@
     height: calc(100% - 100px);
     width: 100%;
     border-radius: 0px 0px 50px 50px;
-    background-color: #481E14;
+    background-color: #5D0E41;
 }
 nav
 {
     display: flex;
     height: 100px;
     width: 100%;
-    background-color: #0C0C0C;
+    background-color: #00224D;
 }
 nav > div
 {
     width: 20%;
     height: 100%;
-    background-color: #0C0C0C;
+    background-color: #00224D;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -59,7 +59,7 @@ nav > div
     height: 80%;
     width: 0%;
     border-radius: 2px;
-    border: 2px solid #481E14;
+    border: 2px solid #5D0E41;
 }
 .quiz-informator > h1,
 .quiz-type > h2 
@@ -67,7 +67,7 @@ nav > div
     text-shadow: 1.5px 1.5px 0 rgba(245, 245, 245, 0.5);
     transition: color 500ms;
 }
-.quiz-type > h2:hover {color: #F2613F;}
+.quiz-type > h2:hover {color: white;}
 .quiz-informator > h1 {font-size: 2em;}
 div.quiz-type:hover, 
 button.start-button:hover {cursor: pointer;}
@@ -77,9 +77,9 @@ main > * {margin: 0.35vh 0px;}
     padding: 7.5px;
     min-width: 58px;
     border-radius: 10px;
-    border: 2px solid #0C0C0C;
+    border: 2px solid #00224D;
     font-weight: bold;
-    background-color: #9B3922;
+    background-color: #A0153E;
 }
 .range-wrap
 {
@@ -93,7 +93,7 @@ input[type = 'range']
     width: 70%;
     appearance: none;
     overflow: hidden;
-    background-color: #0C0C0C;
+    background-color: #00224D;
     border-radius: 10px;
     height: 20px;
 }    
@@ -102,16 +102,16 @@ input[type = 'range']::-webkit-slider-thumb
     width: 10px;
     appearance: none;
     height: 10px;
-    background: whitesmoke;
+    background: #F1E5D1;
     border-radius: 5px;
-    box-shadow: -5px 0 0 5px #9B3922, -100px 0 0 90px #9B3922;
+    box-shadow: -5px 0 0 5px #A0153E, -100px 0 0 90px #A0153E;
 }
 output
 {
     width: 15%;
     border-radius: 5px;
     text-align: center;
-    background-color: #9B3922;
+    background-color: #A0153E;
 }
 output::before
 {
@@ -120,7 +120,7 @@ output::before
     top: calc(50% - 5px);
     content: '';
     border-top: 5px solid transparent;
-    border-right: 5px solid #9B3922;
+    border-right: 5px solid #A0153E;
     border-bottom: 5px solid transparent;
 }
 .quiz-difficulty
@@ -142,7 +142,7 @@ input[type = 'radio']
     margin: 2px;
     width: 1.125em;
     height: 1.125em;
-    border: 0.125em solid whitesmoke;
+    border: 0.125em solid #F1E5D1;
     border-radius: 50%;
     display: grid;
     place-content: center; 
@@ -155,7 +155,7 @@ input[type = 'radio']::before
     border-radius: 50%;
     transform: scale(0);
     transition: 200ms transform ease-in-out;
-    box-shadow: inset 1em 1em #9B3922;
+    box-shadow: inset 1em 1em #A0153E;
 }
 input[type = 'radio']:checked::before {transform: scale(1);}
 #playing
@@ -163,7 +163,7 @@ input[type = 'radio']:checked::before {transform: scale(1);}
     display: none;
     width: 100%;
     height: calc(100% - 100px);
-    background-color: #481E14;
+    background-color: #5D0E41;
     grid-template-columns: 1fr 3fr 1fr 2fr;
     grid-template-rows: 1fr 2fr 1fr;
 }
@@ -182,10 +182,10 @@ input[type = 'radio']:checked::before {transform: scale(1);}
 }
 .answers > button:not(.selected)
 {
-    background-color: #9B3922;
+    background-color: #A0153E;
     border-radius: 20px;
     margin: 20px;
-    border: 3px solid #0C0C0C;
+    border: 3px solid #00224D;
 }
 .question-list
 {
@@ -198,7 +198,7 @@ input[type = 'radio']:checked::before {transform: scale(1);}
 {
     aspect-ratio: 1 / 2;
     width: 10%;
-    border: 1px solid whitesmoke;
+    border: 2px solid #F1E5D1;
     border-radius: 10px;
     margin: 10px;
     display: flex;
@@ -206,10 +206,11 @@ input[type = 'radio']:checked::before {transform: scale(1);}
     align-items: center;
     justify-content: space-around;
 }
+.question-list > div:hover {cursor: pointer;}
 .color 
 {
     aspect-ratio: 1;
-    border: 1px solid whitesmoke;
+    outline: 2px solid #F1E5D1;
     width: calc(100% - 10px);
     border-radius: 5px;
     margin: 2.5px;
@@ -225,30 +226,30 @@ input[type = 'radio']:checked::before {transform: scale(1);}
 {
     width: 25%;
     height: 25%;
-    background-color: #9B3922;
+    background-color: #A0153E;
     border-radius: 20px;
-    border: 3px solid #0C0C0C;
+    border: 3px solid #00224D;
 }
 button {transition: background-color 500ms ease-in-out, color 500ms ease-in-out;}
 button:hover:not(.selected)
 {
     cursor: pointer;
-    background-color: #F2613F;
-    color: #0C0C0C;
+    background-color: #FF204E;
+    color: #00224D;
 }
 .selected 
 {
     border-radius: 20px;
     margin: 20px;
-    border: 3px solid #0C0C0C;
-    color: #0C0C0C;
-    background-color: #F2613F;
+    border: 3px solid #00224D;
+    color: #00224D;
+    background-color: #FF204E;
 }
 .selected:hover
 {
     cursor: pointer;
-    background-color: #9B3922;
-    color: whitesmoke;
+    background-color: #A0153E;
+    color: #F1E5D1;
 }
 .end-info
 {
@@ -267,7 +268,7 @@ button:hover:not(.selected)
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: linear-gradient(-45deg, #9B3922, #F2613F, #9B3922);
+    background: linear-gradient(-45deg, #A0153E, #FF204E, #A0153E);
     padding: 10vh 10vw;
     border-radius: 50px;
 }
@@ -275,15 +276,15 @@ button:hover:not(.selected)
 .end-info-container > button
 {
     width: 25%;
-    background-color: #9B3922;
+    background-color: #A0153E;
     border-radius: 20px;
-    border: 3px solid #0C0C0C;
+    border: 3px solid #00224D;
     padding: 5px;
 }
 #results
 {
     display: none;
-    background-color: #9B3922;
+    background-color: #A0153E;
     min-height: calc(100vh - 100px);
 }
 .results
@@ -295,7 +296,7 @@ button:hover:not(.selected)
 }
 .results > div {
     margin: 0.4vh 0px;
-    border: 2px solid whitesmoke;
+    border: 2px solid #F1E5D1;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -310,7 +311,7 @@ button:hover:not(.selected)
 {
     background-color: darkred;
     padding: 5px;
-    border: 1px solid whitesmoke;
+    border: 1px solid #F1E5D1;
     margin: 2px;
     width: calc(25% - 20px);
 }

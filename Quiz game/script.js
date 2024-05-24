@@ -9,8 +9,12 @@ $("document").ready(function(){
 
     // Changing quiz type
     $("div.quiz-type").on("click", function(){
-        if($("#choosing-questions").css("display") != "none"){
-            $("main > h1").text($(this).text() + " quiz");
+        if($("#choosing-questions").css("display") == "none"){
+            $("#choosing-questions").css("display", "flex");
+            $("#playing-game").attr("id", "starting-game");
+            $("#playing").css("display", "none");
+        }
+        $("main > h1").text($(this).text() + " quiz");
             let whichCategory = $(this).text();
             switch(whichCategory){
                 case "Geography":
@@ -26,7 +30,6 @@ $("document").ready(function(){
                     category = 15;
                     break;
             }
-        }
     });
 
     // Selecting questions
@@ -66,6 +69,13 @@ $("document").ready(function(){
         displayingQuestionList();
     });
 
+    // Chosing questions from list
+    $(".question-list > div").on("click", function(){
+        console.log($(this).children("h2").text(), "nig")
+        questionNumber = $(this).children("h2").text();
+        displayingQuestion();
+    });
+
     // End/continue quiz
     $(".end-info-container > button").on("click", function(){
         if($(this).attr("class") == "continue-game"){
@@ -90,8 +100,8 @@ $("document").ready(function(){
     }
 
     // Creating question list
-    function creatingQuesionList(numberOfQuestions){
-        for(let i = 1; i <= numberOfQuestions; i++){
+    function creatingQuesionList(){
+        for(let i = 1; i <= Number(numberOfQuestions); i++){
             $(".question-list").append(`<div><h2>${i}</h2><div class="color"></div></div>`)
         }
     }
@@ -144,6 +154,8 @@ $("document").ready(function(){
 
     // Displaying question list
     function displayingQuestionList(){
+        $(".question-list").html("");
+        creatingQuesionList();
         let selectedListNumber;
         for(let i = 1; i <= Number(numberOfQuestions); i++){
             selectedListNumber = $(".question-list > div:nth-of-type(" + i + ")"); 
@@ -154,10 +166,10 @@ $("document").ready(function(){
                 selectedListNumber.css("background-color", "inherit");
             }
             if(chosenAnswers[i - 1] == null){
-            selectedListNumber.children("div.color").css("background-color", "#F2613F");
+                selectedListNumber.children("div.color").css("background-color", "#FF204E");
             }
             else{
-                selectedListNumber.children("div.color").css("background-color", "#9B3922");
+                selectedListNumber.children("div.color").css("background-color", "#A0153E");
                 selectedListNumber.children("div.color").append('<i class="material-symbols-outlined"></i>');
             }
         }
@@ -227,6 +239,7 @@ $("document").ready(function(){
             })
             .then(data => {
                 questions = data.results;
+                console.log(questions)
                 chosenAnswers = new Array(Number(numberOfQuestions));
                 howToDisplay = new Array(Number(numberOfQuestions));
                 $("#starting-game").attr("id", "playing-game");
@@ -237,7 +250,6 @@ $("document").ready(function(){
                     $(".go-next").text("End quiz")
                 }
                 displayingQuestion();
-                creatingQuesionList(Number(numberOfQuestions));
                 displayingQuestionList();
             })
             .catch(error => {
