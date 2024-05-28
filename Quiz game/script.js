@@ -9,12 +9,13 @@ $("document").ready(function(){
 
     // Changing quiz type
     $("div.quiz-type").on("click", function(){
-        if($("#choosing-questions").css("display") == "none"){
-            $("#choosing-questions").css("display", "flex");
-            $("#playing-game").attr("id", "starting-game");
-            $("#playing").css("display", "none");
-        }
-        $("main > h1").text($(this).text() + " quiz");
+        if(!$("#results").css("display") == "none"){
+            if($("#choosing-questions").css("display") == "none"){
+                $("#choosing-questions").css("display", "flex");
+                $("#playing-game").attr("id", "starting-game");
+                $("#playing").css("display", "none");
+            }
+            $("main > h1").text($(this).text() + " quiz");
             let whichCategory = $(this).text();
             switch(whichCategory){
                 case "Geography":
@@ -30,6 +31,7 @@ $("document").ready(function(){
                     category = 15;
                     break;
             }
+        }
     });
 
     // Selecting questions
